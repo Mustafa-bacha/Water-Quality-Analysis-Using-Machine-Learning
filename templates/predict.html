@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Prediction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('{{ url_for('static', filename='images/predict_background.jpg') }}') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 700px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .form-group img {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100%;
+            height: auto;
+        }
+        .prediction {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Water Quality Prediction</h1>
+        <form action="{{ url_for('get_prediction') }}" method="post">
+            <div class="form-group">
+                <label for="ph">pH</label>
+                <input type="text" class="form-control" id="ph" name="ph" placeholder="pH" required>
+            </div>
+            <div class="form-group">
+                <label for="hardness">Hardness</label>
+                <input type="text" class="form-control" id="hardness" name="hardness" placeholder="Hardness" required>
+            </div>
+            <div class="form-group">
+                <label for="solids">Solids</label>
+                <input type="text" class="form-control" id="solids" name="solids" placeholder="Solids" required>
+            </div>
+            <div class="form-group">
+                <label for="chloramines">Chloramines</label>
+                <input type="text" class="form-control" id="chloramines" name="chloramines" placeholder="Chloramines" required>
+            </div>
+            <div class="form-group">
+                <label for="sulfate">Sulfate</label>
+                <input type="text" class="form-control" id="sulfate" name="sulfate" placeholder="Sulfate" required>
+            </div>
+            <div class="form-group">
+                <label for="conductivity">Conductivity</label>
+                <input type="text" class="form-control" id="conductivity" name="conductivity" placeholder="Conductivity" required>
+            </div>
+            <div class="form-group">
+                <label for="organic_carbon">Organic Carbon</label>
+                <input type="text" class="form-control" id="organic_carbon" name="organic_carbon" placeholder="Organic Carbon" required>
+            </div>
+            <div class="form-group">
+                <label for="trihalomethanes">Trihalomethanes</label>
+                <input type="text" class="form-control" id="trihalomethanes" name="trihalomethanes" placeholder="Trihalomethanes" required>
+            </div>
+            <div class="form-group">
+                <label for="turbidity">Turbidity</label>
+                <input type="text" class="form-control" id="turbidity" name="turbidity" placeholder="Turbidity" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Predict</button>
+        </form>
+        {% if prediction_text %}
+        <div class="prediction alert alert-info">{{ prediction_text }}</div>
+        {% endif %}
+        <a href="{{ url_for('welcome') }}" class="btn btn-secondary btn-block">Back to Home</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

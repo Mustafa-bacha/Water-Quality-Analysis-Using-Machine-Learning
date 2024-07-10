@@ -1,0 +1,63 @@
+body {
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+h1, h2, p {
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.card {
+    margin: 20px 0;
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+#results img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header img {
+    height: 100px;  /* Adjust this value to make the logo larger */
+}
+
+.header nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.header a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}

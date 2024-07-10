@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Results and Analysis</h1>
+        <p>Below are the results and analysis from our water quality data:</p>
+        <div class="card mb-3">
+            <div class="card-header">
+                Accuracy Results
+            </div>
+            <div class="card-body">
+                <p>Model Accuracy: 95%</p> <!-- Example accuracy, replace with actual -->
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-header">
+                Data Visualizations
+            </div>
+            <div class="card-body">
+                <img src="{{ url_for('static', filename='images/graph1.png') }}" alt="Graph 1" class="img-fluid">
+                <img src="{{ url_for('static', filename='images/graph2.png') }}" alt="Graph 2" class="img-fluid">
+                <!-- Add more graphs as needed -->
+            </div>
+        </div>
+        <a href="{{ url_for('welcome') }}" class="btn btn-secondary">Back to Home</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
