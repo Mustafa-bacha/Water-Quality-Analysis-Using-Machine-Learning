@@ -59,4 +59,4 @@ privacy regulations.
 • Pandas and NumPy: For data manipulation and preprocessing.
 • Scikit-Learn: For developing and training machine learning models.
 • Matplotlib and Seaborn: For data visualization.
-• Flask,HTML and CSS : For Deployment 
+• Flask,HTML and CSS : For Deployment.
